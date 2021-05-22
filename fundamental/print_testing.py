@@ -55,3 +55,18 @@ print("半徑{0:^3d}圓面積是{1:^10.2f}/".format(r, area))
 title = " Python講座 "
 print("/{0:*^20s}/".format(title))
 
+# strip space
+str = "     Hi Kavy!     "
+print("/%s/" % str.lstrip())
+print("/%s/" % str.rstrip())
+print("/%s/" % str.strip())
+
+# format line string
+str_line = "national taiwan University"
+str_line = str_line.title()
+print("/%s/" % str_line)
+print("/%s/" % str_line.center(50))
+print("/%s/" % str_line.ljust(50))
+print("/%s/" % str_line.rjust(50))
+
+
