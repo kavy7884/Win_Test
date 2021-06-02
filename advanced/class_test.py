@@ -37,6 +37,11 @@ class Bank():
     def demo():
         print("I'm demo!")
 
+    def __str__(self) -> str:
+        return "Bank User: " + self.__name
+
+    __repr__ = __str__
+
 my_bank = Bank("kavy")
 my_bank.saveMoney(1000)
 print("Balance: ", my_bank.balance)
@@ -121,4 +126,43 @@ class C(B, A):
 
 x = C()
 
+# type for class and member function
+print(type(son))
+print(type(son.printFatherInfo))
+
+# instance of class
+print(isinstance(son, Son))
+print(isinstance(son, Father))
+print(isinstance(son, Grandfather))
+print(isinstance(son_new, Son))
+
+# get class documents
+print(son.__doc__)
+print(my_bank.__doc__)
+
+# get current name
+print(__name__)
+
+# print object test
+print(my_bank)
+
+# Implement to class iterator (run Frobenius series)
+class Fib():
+    def __init__(self, max) -> None:
+        self.__max = max
+    
+    def __iter__(self):
+        self.__a = 0
+        self.__b = 1
+        return self
+    
+    def __next__(self):
+        fib = self.__a
+        if fib > self.__max:
+            raise StopIteration
+        self.__a, self.__b = self.__b, self.__a + self.__b
+        return fib
+
+for i in Fib(100):
+    print(i)
 
